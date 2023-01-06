@@ -8,11 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@RequestMapping
+@RequestMapping("/")
 public class EsteticaApplication {
+	
 	@GetMapping
+	public String getHomeTeste() {
+		return "Teste API Estetica";
+	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(EsteticaApplication.class, args);
 	}
-
 }
