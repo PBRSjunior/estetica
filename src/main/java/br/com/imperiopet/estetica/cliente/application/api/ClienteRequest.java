@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
 
 @Value
-public interface ClienteRequest {
+public class ClienteRequest {
 	@NotBlank
 	private String nomeCompleto;
 	@NotBlank
