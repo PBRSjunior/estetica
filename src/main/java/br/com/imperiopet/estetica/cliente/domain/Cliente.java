@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import br.com.imperiopet.estetica.cliente.application.api.ClienteRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,13 +36,13 @@ public class Cliente {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDAUltimaAlteracao;
 
-	public Cliente(UUID idCliente, @NotBlank String nomeCompleto, @NotBlank String celular, @NotBlank String endereco,
-			@CPF String cpf) {
-		this.nomeCompleto = nomeCompleto;
-		this.celular = celular;
-		this.endereco = endereco;
-		this.cpf = cpf;
+	public Cliente(ClienteRequest clienteRequest) {
+		this.nomeCompleto = clienteRequest.getNomeCompleto();
+		this.celular = clienteRequest.getCelular();
+		this.endereco = clienteRequest.getEndereco();
+		this.cpf = clienteRequest.getCpf();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+		
 	}
 
 }
