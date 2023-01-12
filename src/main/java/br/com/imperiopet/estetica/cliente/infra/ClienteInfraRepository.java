@@ -1,5 +1,7 @@
 package br.com.imperiopet.estetica.cliente.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.imperiopet.estetica.cliente.application.repository.ClienteRepository;
@@ -18,6 +20,13 @@ public class ClienteInfraRepository implements ClienteRepository {
 		clienteSpringDataJPARepository.save(cliente);
 		log.info("[finaliza]ClienteInfraRepository - salva");
 		return cliente;
+	}
+	@Override
+	public List<Cliente> buscaTodosClientes() {
+		log.info("[inicia]Cliente - buscaTodosClientes");
+		List<Cliente>todosClientes = clienteSpringDataJPARepository.findAll();
+		log.info("[finaliza]Cliente - buscaTodosClientes");
+		return todosClientes;
 	}
 
 }

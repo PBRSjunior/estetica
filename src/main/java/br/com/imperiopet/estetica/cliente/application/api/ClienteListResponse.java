@@ -1,5 +1,6 @@
 package br.com.imperiopet.estetica.cliente.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
@@ -14,5 +15,9 @@ public class ClienteListResponse {
 	private String celular;
 	@CPF
 	private String cpf;
+	public static List<ClienteListResponse> converte(List clientes) {
+		
+		return null;
+	}
 
 }
