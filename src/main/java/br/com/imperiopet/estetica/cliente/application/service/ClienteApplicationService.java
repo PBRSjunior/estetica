@@ -1,7 +1,10 @@
 package br.com.imperiopet.estetica.cliente.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.imperiopet.estetica.cliente.application.api.ClienteListResponse;
 import br.com.imperiopet.estetica.cliente.application.api.ClienteRequest;
 import br.com.imperiopet.estetica.cliente.application.api.ClienteResponse;
 import br.com.imperiopet.estetica.cliente.application.repository.ClienteRepository;
@@ -24,6 +27,12 @@ public class ClienteApplicationService implements ClienteService {
 				.idCliente(cliente.getIdCliente())
 				.build();
 
+	}
+
+	@Override
+	public List<ClienteListResponse> buscaTodosClientes() {
+		log.info("[inicia]ClienteApplicationService - buscaTodosClientes");
+		return null;
 	}
 
 }
